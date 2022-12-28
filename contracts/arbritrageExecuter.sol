@@ -15,6 +15,31 @@ contract ArbitrageExecutor is ReentrancyGuard, Ownable {
     // Address of the DETH contract
     DETH public deth;
 
+    // Event for when arbitrage is executed
+    event ArbitrageExecuted(
+        bytes[] blsPublicKeysOpenIndex,
+        bytes[] blsPublicKeysUserIndex,
+        address[] openIndexStakeHouses,
+        address[] userIndexStakeHouses,
+        uint256 userIndexId,
+        uint256 dETHRequiredForIsolation,
+        address userAddress
+    );
+
+    // Event for when a user's KNOT is added to the open index
+    event KNOTAddedToOpenIndex(
+        address stakeHouse,
+        bytes blsPublicKey,
+        uint256 userIndexId
+    );
+
+    // Event for when a KNOT is isolated from the open index to the user index
+    event KNOTIsolated(
+        address stakeHouse,
+        bytes blsPublicKey,
+        uint256 userIndexId
+    );
+
     // Constructor function
     constructor(address _savETHManagerAddress, address _dETHAddress) {
         // Set the addresses of the savETH manager and DETH contracts
@@ -32,9 +57,11 @@ contract ArbitrageExecutor is ReentrancyGuard, Ownable {
         uint256 _dETHRequiredForIsolation,
         address _userAddress
     ) external nonReentrant {
-        require(msg.sender == _userAddress,
-            "Only the user can execute arbitrage"
-        );
+
+        // This has been commented out in case this process wants to be automated
+        // require(msg.sender == _userAddress,
+        //     "Only the user can execute arbitrage"
+        // );
 
         // Check that the dETH required for isolation is greater than 0
         require(
@@ -68,9 +95,24 @@ contract ArbitrageExecutor is ReentrancyGuard, Ownable {
             // Isolate the validator's KNOT from the open index
             savETHManager.depositAndIsolateKnotIntoIndex(_openIndexStakeHouses[i], _blsPublicKeysOpenIndex[i], _userIndexId);
 
+            emit KNOTIsolated(_openIndexStakeHouses[i], _blsPublicKeysOpenIndex[i], _userIndexId);
+
             // Add the user's KNOT to the open index to complete the arbitrage
             savETHManager.addKnotToOpenIndexAndWithdraw(_userIndexStakeHouses[i], _blsPublicKeysUserIndex[i], _userAddress);
+
+            emit KNOTAddedToOpenIndex(_userIndexStakeHouses[i], _blsPublicKeysUserIndex[i], _userIndexId);
         }
+
+        // Event for when arbitrage is executed
+        emit ArbitrageExecuted(
+            _blsPublicKeysOpenIndex,
+            _blsPublicKeysUserIndex,
+            _openIndexStakeHouses,
+            _userIndexStakeHouses,
+            _userIndexId,
+            _dETHRequiredForIsolation,
+            _userAddress
+        );
 
     }
 

@@ -497,12 +497,11 @@ async def main(
             f"\nDeth profit: {deth_gained_for_returning - deth_required_to_isolate}")
 
 
-
 if __name__ == "__main__":
 
     load_dotenv()
 
-    consider_execution_cost = False
+    consider_execution_cost = True
     web3_url = os.environ.get('INFURA_URL', 'http://127.0.0.1:9545')
     open_index_id = 0
     user_index_id = 1
