@@ -163,6 +163,7 @@ class Stakehouses:
                     query($ids: [ID!]) {
                         knots(where:{
                             id_in: $ids
+                            where: {rageQuit: false}
                         }){
                             id
                             active
@@ -332,6 +333,7 @@ class Arbitrage:
             # Send transaction
             tx_hash = self.web3.eth.sendRawTransaction(signed_txn.rawTransaction)
 
+            print('Arbitrage transaction hash: ' + tx_hash.hex())
             # Wait for transaction to be mined
             self.web3.eth.waitForTransactionReceipt(tx_hash)
 
@@ -521,7 +523,7 @@ if __name__ == "__main__":
 
     load_dotenv()
 
-    consider_execution_cost = True
+    consider_execution_cost = False
     web3_url = os.environ.get('INFURA_URL', 'http://127.0.0.1:9545')
     open_index_id = 0
     user_index_id = 1
