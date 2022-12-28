@@ -1,1 +1,5 @@
-python_graphql_client == 0.4.3
+aiohttp == 3.8.1
+aiographql-client == 1.0.3
+asyncio == 3.4.3
+dotenv == 0.0.5
+web3 == 5.28.0

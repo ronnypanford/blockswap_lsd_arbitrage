@@ -328,11 +328,21 @@ class Arbitrage:
         signed_txn = self.web3.eth.account.sign_transaction(
             message, private_key=os.environ.get('PRIVATE_KEY'))
 
-        # Send transaction
-        tx_hash = self.web3.eth.sendRawTransaction(signed_txn.rawTransaction)
+        try:
+            # Send transaction
+            tx_hash = self.web3.eth.sendRawTransaction(signed_txn.rawTransaction)
 
-        # Wait for transaction to be mined
-        self.web3.eth.waitForTransactionReceipt(tx_hash)
+            # Wait for transaction to be mined
+            self.web3.eth.waitForTransactionReceipt(tx_hash)
+
+            # Check if the transaction was unsuccessful raise error and the transaction error
+            if self.web3.eth.getTransactionReceipt(tx_hash).status == 0:
+                raise Exception('Transaction failed:' + str(
+                    self.web3.eth.getTransactionReceipt(tx_hash).logs[0].data))
+        
+        except Exception as e:
+            raise Exception('Transaction failed:' + str(e))
+
 
         return tx_hash.hex()
 
@@ -359,7 +369,10 @@ class Arbitrage:
             'gasPrice': self.web3.eth.gasPrice
         })
 
-        estimate = self.web3.eth.estimateGas(transaction)
+        try:
+            estimate = self.web3.eth.estimateGas(transaction)
+        except Exception as e:
+            raise Exception('Transaction failed:' + str(e))
 
         return estimate
 
@@ -443,32 +456,39 @@ async def main(
 
     if consider_execution_cost:
         # Check cost of arbitrage
-        executing_cost = arbitrage_instance.get_arbitrage_gas_estimate(
-            openIndex_validators_ids,
-            user_lsd_validators_ids,
-            openIndex_validators_stakehouse_ids,
-            user_lsd_validators_stakehouse_ids,
-            user_index=user_index_id,
-            deth_required=Web3.toWei(deth_required_to_isolate, 'ether'),
-            user_address=Web3.toChecksumAddress(user_address)
-        )
+        try:
+            executing_cost = arbitrage_instance.get_arbitrage_gas_estimate(
+                openIndex_validators_ids,
+                user_lsd_validators_ids,
+                openIndex_validators_stakehouse_ids,
+                user_lsd_validators_stakehouse_ids,
+                user_index=user_index_id,
+                deth_required=Web3.toWei(deth_required_to_isolate, 'ether'),
+                user_address=Web3.toChecksumAddress(user_address)
+            )
+        except Exception as e:
+            print("\nArbitrage cost check failed: " + str(e))
+            return
 
         print(f"\nExecuting cost: {executing_cost}")
 
         if (deth_required_to_isolate + executing_cost) > deth_gained_for_returning:
             print("\nArbitrage is not profitable")
             return
-
-    response = arbitrage_instance.execute_arbitrage(
-        openIndex_validators_ids,
-        user_lsd_validators_ids,
-        openIndex_validators_stakehouse_ids,
-        user_lsd_validators_stakehouse_ids,
-        user_index=user_index_id,
-        deth_required=Web3.toWei(deth_required_to_isolate, 'ether'),
-        user_address=Web3.toChecksumAddress(user_address),
-        gas=(executing_cost if consider_execution_cost else GAS_LIMIT),
-    )
+    try:
+        response = arbitrage_instance.execute_arbitrage(
+            openIndex_validators_ids,
+            user_lsd_validators_ids,
+            openIndex_validators_stakehouse_ids,
+            user_lsd_validators_stakehouse_ids,
+            user_index=user_index_id,
+            deth_required=Web3.toWei(deth_required_to_isolate, 'ether'),
+            user_address=Web3.toChecksumAddress(user_address),
+            gas=(executing_cost if consider_execution_cost else GAS_LIMIT),
+        )
+    except Exception as e:
+        print(f"\nArbitrage failed: {e}")
+        return
 
     print(f"\nArbitrage executed: {response}\n")
 

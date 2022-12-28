@@ -11,6 +11,13 @@ To fetch information about the validators and their yields, the script queries t
 
 [Test Arbitrage for user 0x0051fa16140caff32fce56f50743d05d38be8d6b](test_arbitrage_for_user_0x0051fa16140caff32fce56f50743d05d38be8d6b.jpg)
 
+To Run
+------
+
+To run the script, run the following command:
+
+    python3 arbitrage.py
+
 Dependencies
 ------------
 
@@ -24,6 +31,10 @@ The following dependencies are required to run the script:
 -   os
 -   web3
 
+Install by running the following command:
+
+    pip3 install -r requirements.txt
+
 Environment Variables
 ---------------------
 
@@ -31,6 +42,12 @@ The following environment variables must be set:
 
 -   `INFURA_URL`: The URL of the Ethereum node to be used for contract interactions.
 -   `PRIVATE_key`: The private key used to generate the Ethereum account that will execute the arbitrage.
+
+-   `MNEMONIC`: The mnemonic used to generate the Ethereum account for the truffle goerli deployment.
+
+-   `ACCOUNT`: The Ethereum account address that truffle will use to deploy the contracts.
+
+-   `PROJECT_ID`: The project ID for the Infura project. Used to create the truffle goerli connection in truffle-config.js.
 
 Constants
 ---------
