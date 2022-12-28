@@ -9,8 +9,6 @@ To fetch information about the validators and their yields, the script queries t
 
 [SavETHManager Smart Contract](SMART_CONTRACT_README.md)
 
-[Test Arbitrage](test_arbitrage.jpg)
-
 To Run
 ------
 
