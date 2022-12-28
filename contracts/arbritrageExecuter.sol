@@ -66,10 +66,10 @@ contract ArbitrageExecutor is ReentrancyGuard, Ownable {
 
         for (uint i = 0; i < _blsPublicKeysOpenIndex.length; i++) {
             // Isolate the validator's KNOT from the open index
-            savETHManager.isolateKnotFromOpenIndex(_openIndexStakeHouses[i], _blsPublicKeysOpenIndex[i], _userIndexId);
+            savETHManager.depositAndIsolateKnotIntoIndex(_openIndexStakeHouses[i], _blsPublicKeysOpenIndex[i], _userIndexId);
 
             // Add the user's KNOT to the open index to complete the arbitrage
-            savETHManager.addKnotToOpenIndex(_userIndexStakeHouses[i], _blsPublicKeysUserIndex[i], _userAddress);
+            savETHManager.addKnotToOpenIndexAndWithdraw(_userIndexStakeHouses[i], _blsPublicKeysUserIndex[i], _userAddress);
         }
 
     }

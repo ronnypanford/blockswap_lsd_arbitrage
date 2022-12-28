@@ -194,7 +194,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity 0.8.17;\r\n\r\n// SPDX-License-Identifier: BUSL-1.1\r\n\r\ninterface DETH {\r\n    // ERC20 functions\r\n    function totalSupply() external view returns (uint256);\r\n    function balanceOf(address _owner) external view returns (uint256);\r\n    function transfer(address _to, uint256 _value) external returns (bool);\r\n    function approve(address _spender, uint256 _value) external returns (bool);\r\n    function allowance(address _owner, address _spender) external view returns (uint256);\r\n    function transferFrom(address _from, address _to, uint256 _value) external returns (bool);\r\n\r\n    // ERC20 events\r\n    event Transfer(address indexed _from, address indexed _to, uint256 _value);\r\n    event Approval(address indexed _owner, address indexed _spender, uint256 _value);\r\n}\r\n",
-  "sourcePath": "C:\\Users\\ronny\\OneDrive\\Desktop\\Work\\Blockswap\\blockswap_lsd_arbitrage\\python_truffle\\contracts\\DETH.sol",
+  "sourcePath": "C:\\Users\\ronny\\OneDrive\\Desktop\\Work\\Blockswap\\blockswap_lsd_arbitrage\\contracts\\DETH.sol",
   "ast": {
     "absolutePath": "project:/contracts/DETH.sol",
     "exportedSymbols": {
@@ -1061,7 +1061,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.11",
-  "updatedAt": "2022-12-28T04:21:25.428Z",
+  "updatedAt": "2022-12-28T07:00:03.290Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

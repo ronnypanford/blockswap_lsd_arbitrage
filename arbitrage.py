@@ -364,15 +364,13 @@ class Arbitrage:
         return estimate
 
 
-async def main():
-
-    load_dotenv()
-
-    consider_execution_cost = True
-    web3_url = os.environ.get('INFURA_URL', 'http://127.0.0.1:9545')
-    open_index_id = 0
-    user_index_id = 1
-    user_address = '0xc3419f3ac973574f1e0c47cc9e6f4804acf8c740'
+async def main(
+    web3_url,
+    open_index_id,
+    user_index_id,
+    user_address,
+    consider_execution_cost=True
+):
 
     lsd_validators_instance = LsdValidators(LSD_SUBGRAPH_URL)
     i_save_eth_manager_instance = ISavETHManager(web3_url)
@@ -431,6 +429,18 @@ async def main():
             print(f"\nOpenIndex Validator: {openindex_validators_details[i]}")
             print(f"\nUser LSD Validator: {user_lsd_validators_details[i]}\n")
 
+    # Approve deth
+    response = i_save_eth_manager_instance.approve_deth(
+        deth_amount=Web3.toWei(deth_required_to_isolate, 'ether')
+    )
+
+    # If approve deth failed
+    if not response:
+        print("\nApprove deth failed.")
+        return
+
+    print(f"\nApprove deth success, transaction hash: {str(response)}")
+
     if consider_execution_cost:
         # Check cost of arbitrage
         executing_cost = arbitrage_instance.get_arbitrage_gas_estimate(
@@ -448,18 +458,6 @@ async def main():
         if (deth_required_to_isolate + executing_cost) > deth_gained_for_returning:
             print("\nArbitrage is not profitable")
             return
-
-    # Approve deth
-    response = i_save_eth_manager_instance.approve_deth(
-        deth_amount=Web3.toWei(deth_required_to_isolate, 'ether')
-    )
-
-    # If approve deth failed
-    if not response:
-        print("\nApprove deth failed.")
-        return
-
-    print(f"\nApprove deth success, transaction hash: {str(response)}")
 
     response = arbitrage_instance.execute_arbitrage(
         openIndex_validators_ids,
@@ -481,14 +479,14 @@ async def main():
     print("\nPairs executed:")
     for i in range(len(openIndex_validators_ids)):
         print(f"\nOpenIndex Validator isolated: {openIndex_validators_ids[i]}")
-        print(f"\nYield of OpenIndex Validator: {openindex_validators_details[i]['reportedYield']}")
+        print(f"\nYield of OpenIndex Validator: {openindex_validators_details[i]['reportedYield']}%")
         print(
             f"\nOpenIndex cost to isolate: {openindex_validators_details[i]['deth_needed']}")
 
         print(f"\nUser LSD Validator returned to openIndex: {user_lsd_validators_ids[i]}")
-        print(f"\nYield of User LSD Validator: {user_lsd_validators_details[i]['reportedYield']}")
+        print(f"\nYield of User LSD Validator: {user_lsd_validators_details[i]['reportedYield']}%")
 
-        print(f"\nPercentage change in yield: {round((user_lsd_validators_details[i]['reportedYield'] - openindex_validators_details[i]['reportedYield']) / openindex_validators_details[i]['reportedYield'] * 100, 2)}%"")
+        print(f"\nPercentage increase in yield from {user_lsd_validators_details[i]['reportedYield']}% to {openindex_validators_details[i]['reportedYield']}% is: {round((float(user_lsd_validators_details[i]['reportedYield']) - float(openindex_validators_details[i]['reportedYield'])) / float(openindex_validators_details[i]['reportedYield']) * 100, 2)}%")
         print(f"\n")
 
 
@@ -502,4 +500,18 @@ async def main():
 
 if __name__ == "__main__":
 
-    response = asyncio.run(main=main())
+    load_dotenv()
+
+    consider_execution_cost = False
+    web3_url = os.environ.get('INFURA_URL', 'http://127.0.0.1:9545')
+    open_index_id = 0
+    user_index_id = 1
+    user_address = '0x0051fa16140caff32fce56f50743d05d38be8d6b'
+
+    response = asyncio.run(main=main(
+        web3_url=web3_url,
+        open_index_id=open_index_id,
+        user_index_id=user_index_id,
+        user_address=user_address,
+        consider_execution_cost=consider_execution_cost
+    ))
