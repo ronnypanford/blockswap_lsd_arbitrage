@@ -9,6 +9,8 @@ To fetch information about the validators and their yields, the script queries t
 
 [SavETHManager Smart Contract](SMART_CONTRACT_README.md)
 
+[Test Arbitrage for user 0xc3419f3ac973574f1e0c47cc9e6f4804acf8c740](test_arbitrage_for_user_0xc3419f3ac973574f1e0c47cc9e6f4804acf8c740.jpg)
+
 Dependencies
 ------------
 
@@ -140,67 +142,34 @@ This method calculates the amount of dETH required for isolation for a validator
 
 -   An integer representing the amount of dETH required.
 
-#### `async get_stakehouse_accounts(self, validator_ids)`
+#### `approve_deth(self, validator_id)`
 
-This method queries the GraphQL API for all the StakehouseAccounts that have a `stakeHouse` of the `validator_ids`. It returns a generator object.
+This method approves the amount of dETH required for isolation for a validator for the saveETHManager to spend. It returns the transaction hash.
 
 ##### Parameters
 
--   `validator_ids`: The `validator_ids`.
+-   `deth_amount`: The `deth_amount` required for isolation of the validatos.
 
 ##### Returns
 
--   A generator object.
+-   The transaction hash of the approval.
 
-#### `async get_user_lsd_validators(self, user_address)`
+#### `get_user_index(self, user_validator_id)`
 
-This method queries the GraphQL API for all the LSD validators that have a `stakeHouse` of the `user_address`. It returns a generator object.
+This method gets the index of the user using one of the validator IDs of the user. It returns an integer representing the index of the user.
 
 ##### Parameters
 
--   `user_address`: The `user_address`.
+-   `user_validator_id`: The `user_validator_id` of the user.
 
 ##### Returns
 
--   A generator object.
+-   An integer representing the index of the user.
 
-#### `async get_knot_details(self, validators, order_by=None, order_direction=None)`
+.
 
-This method queries the GraphQL API for all the details of the validators. It returns a list of dictionaries containing the details of the validators.
+### Arbitrage
 
-##### Parameters
-
--   `validators`: The list of validators.
--   `order_by`: The field to order the results by.
--   `order_direction`: The direction to order the results in.
-
-##### Returns
-
--   A list of dictionaries containing the details of the validators.
-
-### ISavETHManager
-
-This class is used to interact with the `ISavETHManager` contract.
-
-#### `__init__(self, web3_url)`
-
-This is the constructor of the `ISavETHManager` class. It takes in a `web3_url` and creates a `Web3` object. It also sets the contract address and ABI for the `ISavETHManager` contract.
-
-##### Parameters
-
--   `web3_url`: The `web3_url` to connect to.
-
-#### `calc_deth_required(self, validator_id)`
-
-This method calculates the amount of dETH required for isolation for a validator with the given `validator_id`. It returns an integer representing the amount of dETH required.
-
-##### Parameters
-
--   `validator_id`: The `validator_id` of the validator.
-
-##### Returns
-
--   An integer representing the amount of dETH required.### Arbitrage
 
 This class is used to interact with the `ArbitrageExecutor` contract.
 

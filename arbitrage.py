@@ -249,9 +249,9 @@ class ISavETHManager:
         deth_required = 24 + self.web3.fromWei(rewards_minted, 'ether')
         return deth_required
 
-    def approve_deth(self, user_address, deth_amount):
+    def approve_deth(self, deth_amount):
         estimate = self.deth_contract.functions.approve(
-            self.web3.toChecksumAddress(user_address),
+            self.web3.toChecksumAddress(SAV_ETH_MANAGER_CONTRACT_ADDRESS),
             self.web3.toWei(deth_amount, 'ether')).estimateGas(
             {'from': self.web3.eth.defaultAccount,
              'nonce': self.web3.eth.getTransactionCount(self.web3.eth.defaultAccount),
@@ -260,7 +260,7 @@ class ISavETHManager:
         )
 
         deth_contract = self.deth_contract.functions.approve(
-            self.web3.toChecksumAddress(user_address),
+            self.web3.toChecksumAddress(SAV_ETH_MANAGER_CONTRACT_ADDRESS),
             self.web3.toWei(deth_amount, 'ether')).buildTransaction(
             {'from': self.web3.eth.defaultAccount,
                 'nonce': self.web3.eth.getTransactionCount(self.web3.eth.defaultAccount),
@@ -270,6 +270,8 @@ class ISavETHManager:
         tx_receipt = self.web3.eth.sendRawTransaction(
             self.web3.eth.account.sign_transaction(
                 deth_contract, private_key=os.environ.get('PRIVATE_KEY')).rawTransaction)
+
+        self.web3.eth.waitForTransactionReceipt(tx_receipt.hex())
 
         return tx_receipt.hex()
     
@@ -332,7 +334,7 @@ class Arbitrage:
         # Wait for transaction to be mined
         self.web3.eth.waitForTransactionReceipt(tx_hash)
 
-        return tx_hash
+        return tx_hash.hex()
 
     def get_arbitrage_gas_estimate(self,
                                    open_index_validator_ids,
@@ -366,7 +368,7 @@ async def main():
 
     load_dotenv()
 
-    consider_execution_cost = False
+    consider_execution_cost = True
     web3_url = os.environ.get('INFURA_URL', 'http://127.0.0.1:9545')
     open_index_id = 0
     user_index_id = 1
@@ -449,7 +451,6 @@ async def main():
 
     # Approve deth
     response = i_save_eth_manager_instance.approve_deth(
-        user_address=Web3.toChecksumAddress(user_address),
         deth_amount=Web3.toWei(deth_required_to_isolate, 'ether')
     )
 
@@ -476,21 +477,27 @@ async def main():
     print(f"\nDeth required to isolate: {deth_required_to_isolate}")
     print(f"\nDeth gained for returning: {deth_gained_for_returning}")
 
+
+    print("\nPairs executed:")
+    for i in range(len(openIndex_validators_ids)):
+        print(f"\nOpenIndex Validator isolated: {openIndex_validators_ids[i]}")
+        print(f"\nYield of OpenIndex Validator: {openindex_validators_details[i]['reportedYield']}")
+        print(
+            f"\nOpenIndex cost to isolate: {openindex_validators_details[i]['deth_needed']}")
+
+        print(f"\nUser LSD Validator returned to openIndex: {user_lsd_validators_ids[i]}")
+        print(f"\nYield of User LSD Validator: {user_lsd_validators_details[i]['reportedYield']}")
+
+        print(f"\nPercentage change in yield: {round((user_lsd_validators_details[i]['reportedYield'] - openindex_validators_details[i]['reportedYield']) / openindex_validators_details[i]['reportedYield'] * 100, 2)}%"")
+        print(f"\n")
+
+
     if consider_execution_cost:
         print(
             f"\nDeth profit: {deth_gained_for_returning - deth_required_to_isolate - executing_cost}")
     else:
         print(
             f"\nDeth profit: {deth_gained_for_returning - deth_required_to_isolate}")
-
-    print("\nPairs executed:")
-    for i in range(len(openIndex_validators_ids)):
-        print(f"\nOpenIndex Validator: {openIndex_validators_ids[i]}")
-        print(
-            f"\nOpenIndex cost to isolate: {openindex_validators_details[i]['deth_needed']}")
-
-        print(f"\nUser LSD Validator: {user_lsd_validators_ids[i]}\n")
-        print(f"\n")
 
 
 if __name__ == "__main__":
