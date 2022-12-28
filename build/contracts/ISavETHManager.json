@@ -1,0 +1,2975 @@
+{
+  "contractName": "ISavETHManager",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "createIndex",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_indexId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_spender",
+          "type": "address"
+        }
+      ],
+      "name": "approveForIndexOwnershipTransfer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_indexId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        }
+      ],
+      "name": "transferIndexOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_stakeHouse",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_blsPublicKey",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_newIndexId",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferKnotToAnotherIndex",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_stakeHouse",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_blsPublicKey",
+          "type": "bytes"
+        },
+        {
+          "internalType": "address",
+          "name": "_spender",
+          "type": "address"
+        }
+      ],
+      "name": "approveSpendingOfKnotInIndex",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_stakeHouse",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_blsPublicKey",
+          "type": "bytes"
+        },
+        {
+          "internalType": "address",
+          "name": "_recipient",
+          "type": "address"
+        }
+      ],
+      "name": "addKnotToOpenIndex",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_stakeHouse",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_blsPublicKey",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_targetIndexId",
+          "type": "uint256"
+        }
+      ],
+      "name": "isolateKnotFromOpenIndex",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_stakeHouse",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_blsPublicKey",
+          "type": "bytes"
+        },
+        {
+          "internalType": "address",
+          "name": "_recipient",
+          "type": "address"
+        }
+      ],
+      "name": "addKnotToOpenIndexAndWithdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_stakeHouse",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_blsPublicKey",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_indexId",
+          "type": "uint256"
+        }
+      ],
+      "name": "depositAndIsolateKnotIntoIndex",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint128",
+          "name": "_amount",
+          "type": "uint128"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint128",
+          "name": "_amount",
+          "type": "uint128"
+        }
+      ],
+      "name": "deposit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_blsPublicKey",
+          "type": "bytes"
+        }
+      ],
+      "name": "dETHRewardsMintedForKnot",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_blsPublicKey",
+          "type": "bytes"
+        }
+      ],
+      "name": "approvedKnotSpender",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_indexId",
+          "type": "uint256"
+        }
+      ],
+      "name": "approvedIndexSpender",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_indexId",
+          "type": "uint256"
+        }
+      ],
+      "name": "indexIdToOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_indexId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_blsPublicKey",
+          "type": "bytes"
+        }
+      ],
+      "name": "knotDETHBalanceInIndex",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_blsPublicKey",
+          "type": "bytes"
+        }
+      ],
+      "name": "associatedIndexIdForKnot",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_blsPublicKey",
+          "type": "bytes"
+        }
+      ],
+      "name": "isKnotPartOfOpenIndex",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "dETHUnderManagementInOpenIndex",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "dETHInCirculation",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalDETHInIndices",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "dETHToSavETH",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "savETHToDETH",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "dETHToken",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "savETHToken",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_stakeHouse\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_blsPublicKey\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"_recipient\",\"type\":\"address\"}],\"name\":\"addKnotToOpenIndex\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_stakeHouse\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_blsPublicKey\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"_recipient\",\"type\":\"address\"}],\"name\":\"addKnotToOpenIndexAndWithdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_indexId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_spender\",\"type\":\"address\"}],\"name\":\"approveForIndexOwnershipTransfer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_stakeHouse\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_blsPublicKey\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"_spender\",\"type\":\"address\"}],\"name\":\"approveSpendingOfKnotInIndex\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_indexId\",\"type\":\"uint256\"}],\"name\":\"approvedIndexSpender\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_blsPublicKey\",\"type\":\"bytes\"}],\"name\":\"approvedKnotSpender\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_blsPublicKey\",\"type\":\"bytes\"}],\"name\":\"associatedIndexIdForKnot\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"createIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"dETHInCirculation\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_blsPublicKey\",\"type\":\"bytes\"}],\"name\":\"dETHRewardsMintedForKnot\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"dETHToSavETH\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"dETHToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"dETHUnderManagementInOpenIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_recipient\",\"type\":\"address\"},{\"internalType\":\"uint128\",\"name\":\"_amount\",\"type\":\"uint128\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_stakeHouse\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_blsPublicKey\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"_indexId\",\"type\":\"uint256\"}],\"name\":\"depositAndIsolateKnotIntoIndex\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_indexId\",\"type\":\"uint256\"}],\"name\":\"indexIdToOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_blsPublicKey\",\"type\":\"bytes\"}],\"name\":\"isKnotPartOfOpenIndex\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_stakeHouse\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_blsPublicKey\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"_targetIndexId\",\"type\":\"uint256\"}],\"name\":\"isolateKnotFromOpenIndex\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_indexId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_blsPublicKey\",\"type\":\"bytes\"}],\"name\":\"knotDETHBalanceInIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"savETHToDETH\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"savETHToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalDETHInIndices\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_indexId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"}],\"name\":\"transferIndexOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_stakeHouse\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_blsPublicKey\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"_newIndexId\",\"type\":\"uint256\"}],\"name\":\"transferKnotToAnotherIndex\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_recipient\",\"type\":\"address\"},{\"internalType\":\"uint128\",\"name\":\"_amount\",\"type\":\"uint128\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"addKnotToOpenIndex(address,bytes,address)\":{\"params\":{\"_blsPublicKey\":\"of the KNOT\",\"_recipient\":\"Address receiving savETH\",\"_stakeHouse\":\"Registry that the KNOT is part of\"}},\"addKnotToOpenIndexAndWithdraw(address,bytes,address)\":{\"params\":{\"_blsPublicKey\":\"KNOT ID that belongs to an index\",\"_recipient\":\"Recipient of dETH tokens\",\"_stakeHouse\":\"Address of StakeHouse that the KNOT belongs to\"}},\"approveForIndexOwnershipTransfer(uint256,address)\":{\"params\":{\"_indexId\":\"ID of the index being approved\",\"_spender\":\"Authorised spender or zero address to clear approval\"}},\"approveSpendingOfKnotInIndex(address,bytes,address)\":{\"params\":{\"_blsPublicKey\":\"of the KNOT\",\"_spender\":\"Account that can transfer the knot that is isolated within an index\",\"_stakeHouse\":\"Registry that the KNOT is part of\"}},\"createIndex(address)\":{\"params\":{\"_owner\":\"Address that will own the new index. ID of the index is auto generated and assigned to this account\"}},\"deposit(address,uint128)\":{\"params\":{\"_amount\":\"of dETH being deposited\"}},\"depositAndIsolateKnotIntoIndex(address,bytes,uint256)\":{\"params\":{\"_blsPublicKey\":\"KNOT ID that requires adding to an index\",\"_indexId\":\"ID of the index that the KNOT is being added into\",\"_stakeHouse\":\"Address of StakeHouse that the KNOT belongs to\"}},\"isolateKnotFromOpenIndex(address,bytes,uint256)\":{\"params\":{\"_blsPublicKey\":\"KNOT ID within the StakeHouse\",\"_stakeHouse\":\"Address of StakeHouse that the KNOT belongs to\",\"_targetIndexId\":\"ID of the index that the KNOT will be added to\"}},\"transferIndexOwnership(uint256,address)\":{\"params\":{\"_indexId\":\"ID of the index having ownership transferred\",\"_to\":\"Account receiving ownership of the index\"}},\"transferKnotToAnotherIndex(address,bytes,uint256)\":{\"params\":{\"_blsPublicKey\":\"of the KNOT\",\"_newIndexId\":\"ID of the index receiving the KNOT\",\"_stakeHouse\":\"Registry that the KNOT is part of\"}},\"withdraw(address,uint128)\":{\"params\":{\"_amount\":\"of SaveETH to burn\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"addKnotToOpenIndex(address,bytes,address)\":{\"notice\":\"Move a KNOT that is part of an index into the open index in order to get access to the savETH <> dETH\"},\"addKnotToOpenIndexAndWithdraw(address,bytes,address)\":{\"notice\":\"In a single transaction, add knot to open index and withdraw dETH in registry\"},\"approveForIndexOwnershipTransfer(uint256,address)\":{\"notice\":\"Allow an owner of an index to approve another account to transfer ownership (like a marketplace)\"},\"approveSpendingOfKnotInIndex(address,bytes,address)\":{\"notice\":\"Allows an index owner to approve a marketplace to transfer ownership of a KNOT from one index to another\"},\"approvedIndexSpender(uint256)\":{\"notice\":\"Approved spender that can transfer ownership of an entire index (a marketplace for example)\"},\"approvedKnotSpender(bytes)\":{\"notice\":\"Approved spender that can transfer ownership of a KNOT from one index to another (a marketplace for example)\"},\"associatedIndexIdForKnot(bytes)\":{\"notice\":\"ID of KNOT associated index. Zero if part of open index or non zero if part of a user-owned index\"},\"createIndex(address)\":{\"notice\":\"Allows any account to create a savETH index in order to group KNOTs together that earn exclusive dETH rewards. The index will be owned by _owner\"},\"dETHInCirculation()\":{\"notice\":\"Total number of dETH minted across all KNOTs\"},\"dETHRewardsMintedForKnot(bytes)\":{\"notice\":\"Total number of dETH rewards minted for knot from inflation rewards\"},\"dETHToSavETH(uint256)\":{\"notice\":\"Helper to convert dETH to savETH based on the current exchange rate\"},\"dETHToken()\":{\"notice\":\"Address of the dETH token\"},\"dETHUnderManagementInOpenIndex()\":{\"notice\":\"Total number of dETH deposited into the open index that is not part of user owned indices\"},\"deposit(address,uint128)\":{\"notice\":\"Deposit dETH in exchange for SaveETH\"},\"depositAndIsolateKnotIntoIndex(address,bytes,uint256)\":{\"notice\":\"In a single transaction, deposit dETH and isolate a knot into an index\"},\"indexIdToOwner(uint256)\":{\"notice\":\"Given an index identifier, returns the owner of the index or zero address if index not created\"},\"isKnotPartOfOpenIndex(bytes)\":{\"notice\":\"Returns true if KNOT is part of the open index where they can spend their savETH. Otherwise they are part of a user owned index\"},\"isolateKnotFromOpenIndex(address,bytes,uint256)\":{\"notice\":\"Given a KNOT that is part of the open index, allow a savETH holder to isolate the KNOT into their own index gaining exclusive rights to the network inflation rewards\"},\"knotDETHBalanceInIndex(uint256,bytes)\":{\"notice\":\"Total dETH isolated for a knot associated with an index. Returns zero if knot is not part of an index\"},\"savETHToDETH(uint256)\":{\"notice\":\"Helper to convert savETH to dETH based on the current exchange rate\"},\"savETHToken()\":{\"notice\":\"Address of the savETH token\"},\"totalDETHInIndices()\":{\"notice\":\"Total amount of dETH isolated in user owned indices\"},\"transferIndexOwnership(uint256,address)\":{\"notice\":\"Transfer ownership of an index of KNOTs to a new owner\"},\"transferKnotToAnotherIndex(address,bytes,uint256)\":{\"notice\":\"Allows an index owner or KNOT spender to transfer ownership of a KNOT to another index\"},\"withdraw(address,uint128)\":{\"notice\":\"Allows a SaveETH holder to exchange some or all of their SaveETH for dETH\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ISavETHManager.sol\":\"ISavETHManager\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ISavETHManager.sol\":{\"keccak256\":\"0x7cec4741df33787bdfc123666ec8fee7c144b9d259a51c07ac3a912f55a3bd9a\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://e8daee4fd7bfb924a4e1722a8dc5e0579fc1682016e9a14a088590b36578683a\",\"dweb:/ipfs/QmQbyVNT4Hbip7UsJE9M4BbZHhekGsdM6pDa71s6inESem\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.8.17;\r\n\r\n// SPDX-License-Identifier: BUSL-1.1\r\n\r\ninterface ISavETHManager {\r\n    /// @notice Allows any account to create a savETH index in order to group KNOTs together that earn exclusive dETH rewards. The index will be owned by _owner\r\n    /// @param _owner Address that will own the new index. ID of the index is auto generated and assigned to this account\r\n    function createIndex(address _owner) external returns (uint256);\r\n\r\n    /// @notice Allow an owner of an index to approve another account to transfer ownership (like a marketplace)\r\n    /// @param _indexId ID of the index being approved\r\n    /// @param _spender Authorised spender or zero address to clear approval\r\n    function approveForIndexOwnershipTransfer(\r\n        uint256 _indexId,\r\n        address _spender\r\n    ) external;\r\n\r\n    /// @notice Transfer ownership of an index of KNOTs to a new owner\r\n    /// @param _indexId ID of the index having ownership transferred\r\n    /// @param _to Account receiving ownership of the index\r\n    function transferIndexOwnership(uint256 _indexId, address _to) external;\r\n\r\n    /// @notice Allows an index owner or KNOT spender to transfer ownership of a KNOT to another index\r\n    /// @param _stakeHouse Registry that the KNOT is part of\r\n    /// @param _blsPublicKey of the KNOT\r\n    /// @param _newIndexId ID of the index receiving the KNOT\r\n    function transferKnotToAnotherIndex(\r\n        address _stakeHouse,\r\n        bytes calldata _blsPublicKey,\r\n        uint256 _newIndexId\r\n    ) external;\r\n\r\n    /// @notice Allows an index owner to approve a marketplace to transfer ownership of a KNOT from one index to another\r\n    /// @param _stakeHouse Registry that the KNOT is part of\r\n    /// @param _blsPublicKey of the KNOT\r\n    /// @param _spender Account that can transfer the knot that is isolated within an index\r\n    function approveSpendingOfKnotInIndex(\r\n        address _stakeHouse,\r\n        bytes calldata _blsPublicKey,\r\n        address _spender\r\n    ) external;\r\n\r\n    /// @notice Move a KNOT that is part of an index into the open index in order to get access to the savETH <> dETH\r\n    /// @param _stakeHouse Registry that the KNOT is part of\r\n    /// @param _blsPublicKey of the KNOT\r\n    /// @param _recipient Address receiving savETH\r\n    function addKnotToOpenIndex(\r\n        address _stakeHouse,\r\n        bytes calldata _blsPublicKey,\r\n        address _recipient\r\n    ) external;\r\n\r\n    /// @notice Given a KNOT that is part of the open index, allow a savETH holder to isolate the KNOT into their own index gaining exclusive rights to the network inflation rewards\r\n    /// @param _stakeHouse Address of StakeHouse that the KNOT belongs to\r\n    /// @param _blsPublicKey KNOT ID within the StakeHouse\r\n    /// @param _targetIndexId ID of the index that the KNOT will be added to\r\n    function isolateKnotFromOpenIndex(\r\n        address _stakeHouse,\r\n        bytes calldata _blsPublicKey,\r\n        uint256 _targetIndexId\r\n    ) external;\r\n\r\n    /// @notice In a single transaction, add knot to open index and withdraw dETH in registry\r\n    /// @param _stakeHouse Address of StakeHouse that the KNOT belongs to\r\n    /// @param _blsPublicKey KNOT ID that belongs to an index\r\n    /// @param _recipient Recipient of dETH tokens\r\n    function addKnotToOpenIndexAndWithdraw(\r\n        address _stakeHouse,\r\n        bytes calldata _blsPublicKey,\r\n        address _recipient\r\n    ) external;\r\n\r\n    /// @notice In a single transaction, deposit dETH and isolate a knot into an index\r\n    /// @param _stakeHouse Address of StakeHouse that the KNOT belongs to\r\n    /// @param _blsPublicKey KNOT ID that requires adding to an index\r\n    /// @param _indexId ID of the index that the KNOT is being added into\r\n    function depositAndIsolateKnotIntoIndex(\r\n        address _stakeHouse,\r\n        bytes calldata _blsPublicKey,\r\n        uint256 _indexId\r\n    ) external;\r\n\r\n    /// @notice Allows a SaveETH holder to exchange some or all of their SaveETH for dETH\r\n    /// @param _amount of SaveETH to burn\r\n    function withdraw(address _recipient, uint128 _amount) external;\r\n\r\n    /// @notice Deposit dETH in exchange for SaveETH\r\n    /// @param _amount of dETH being deposited\r\n    function deposit(address _recipient, uint128 _amount) external;\r\n\r\n    /// @notice Total number of dETH rewards minted for knot from inflation rewards\r\n    function dETHRewardsMintedForKnot(bytes calldata _blsPublicKey) external view returns (uint256);\r\n\r\n    /// @notice Approved spender that can transfer ownership of a KNOT from one index to another (a marketplace for example)\r\n    function approvedKnotSpender(bytes calldata _blsPublicKey) external view returns (address);\r\n\r\n    /// @notice Approved spender that can transfer ownership of an entire index (a marketplace for example)\r\n    function approvedIndexSpender(uint256 _indexId) external view returns (address);\r\n\r\n    /// @notice Given an index identifier, returns the owner of the index or zero address if index not created\r\n    function indexIdToOwner(uint256 _indexId) external view returns (address);\r\n\r\n    /// @notice Total dETH isolated for a knot associated with an index. Returns zero if knot is not part of an index\r\n    function knotDETHBalanceInIndex(uint256 _indexId, bytes calldata _blsPublicKey) external view returns (uint256);\r\n\r\n    /// @notice ID of KNOT associated index. Zero if part of open index or non zero if part of a user-owned index\r\n    function associatedIndexIdForKnot(bytes calldata _blsPublicKey) external view returns (uint256);\r\n\r\n    /// @notice Returns true if KNOT is part of the open index where they can spend their savETH. Otherwise they are part of a user owned index\r\n    function isKnotPartOfOpenIndex(bytes calldata _blsPublicKey) external view returns (bool);\r\n\r\n    /// @notice Total number of dETH deposited into the open index that is not part of user owned indices\r\n    function dETHUnderManagementInOpenIndex() external view returns (uint256);\r\n\r\n    /// @notice Total number of dETH minted across all KNOTs\r\n    function dETHInCirculation() external view returns (uint256);\r\n\r\n    /// @notice Total amount of dETH isolated in user owned indices\r\n    function totalDETHInIndices() external view returns (uint256);\r\n\r\n    /// @notice Helper to convert dETH to savETH based on the current exchange rate\r\n    function dETHToSavETH(uint256 _amount) external view returns (uint256);\r\n\r\n    /// @notice Helper to convert savETH to dETH based on the current exchange rate\r\n    function savETHToDETH(uint256 _amount) external view returns (uint256);\r\n\r\n    /// @notice Address of the dETH token\r\n    function dETHToken() external view returns (address);\r\n\r\n    /// @notice Address of the savETH token\r\n    function savETHToken() external view returns (address);\r\n}",
+  "sourcePath": "C:\\Users\\ronny\\OneDrive\\Desktop\\Work\\Blockswap\\blockswap_lsd_arbitrage\\python_truffle\\contracts\\ISavETHManager.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/ISavETHManager.sol",
+    "exportedSymbols": {
+      "ISavETHManager": [
+        297
+      ]
+    },
+    "id": 298,
+    "license": "BUSL-1.1",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 92,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ISavETHManager",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 297,
+        "linearizedBaseContracts": [
+          297
+        ],
+        "name": "ISavETHManager",
+        "nameLocation": "77:14:2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 93,
+              "nodeType": "StructuredDocumentation",
+              "src": "99:279:2",
+              "text": "@notice Allows any account to create a savETH index in order to group KNOTs together that earn exclusive dETH rewards. The index will be owned by _owner\n @param _owner Address that will own the new index. ID of the index is auto generated and assigned to this account"
+            },
+            "functionSelector": "9ddeb5c9",
+            "id": 100,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createIndex",
+            "nameLocation": "393:11:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 96,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 95,
+                  "mutability": "mutable",
+                  "name": "_owner",
+                  "nameLocation": "413:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 100,
+                  "src": "405:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 94,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "405:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "404:16:2"
+            },
+            "returnParameters": {
+              "id": 99,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 98,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 100,
+                  "src": "439:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 97,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "439:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "438:9:2"
+            },
+            "scope": 297,
+            "src": "384:64:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 101,
+              "nodeType": "StructuredDocumentation",
+              "src": "456:242:2",
+              "text": "@notice Allow an owner of an index to approve another account to transfer ownership (like a marketplace)\n @param _indexId ID of the index being approved\n @param _spender Authorised spender or zero address to clear approval"
+            },
+            "functionSelector": "0b94f8f3",
+            "id": 108,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "approveForIndexOwnershipTransfer",
+            "nameLocation": "713:32:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 106,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 103,
+                  "mutability": "mutable",
+                  "name": "_indexId",
+                  "nameLocation": "764:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 108,
+                  "src": "756:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 102,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "756:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 105,
+                  "mutability": "mutable",
+                  "name": "_spender",
+                  "nameLocation": "791:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 108,
+                  "src": "783:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 104,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "783:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "745:61:2"
+            },
+            "returnParameters": {
+              "id": 107,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "815:0:2"
+            },
+            "scope": 297,
+            "src": "704:112:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 109,
+              "nodeType": "StructuredDocumentation",
+              "src": "824:197:2",
+              "text": "@notice Transfer ownership of an index of KNOTs to a new owner\n @param _indexId ID of the index having ownership transferred\n @param _to Account receiving ownership of the index"
+            },
+            "functionSelector": "9bbf0670",
+            "id": 116,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferIndexOwnership",
+            "nameLocation": "1036:22:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 114,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 111,
+                  "mutability": "mutable",
+                  "name": "_indexId",
+                  "nameLocation": "1067:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 116,
+                  "src": "1059:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 110,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1059:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 113,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "1085:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 116,
+                  "src": "1077:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 112,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1077:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1058:31:2"
+            },
+            "returnParameters": {
+              "id": 115,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1098:0:2"
+            },
+            "scope": 297,
+            "src": "1027:72:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 117,
+              "nodeType": "StructuredDocumentation",
+              "src": "1107:265:2",
+              "text": "@notice Allows an index owner or KNOT spender to transfer ownership of a KNOT to another index\n @param _stakeHouse Registry that the KNOT is part of\n @param _blsPublicKey of the KNOT\n @param _newIndexId ID of the index receiving the KNOT"
+            },
+            "functionSelector": "303be339",
+            "id": 126,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferKnotToAnotherIndex",
+            "nameLocation": "1387:26:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 124,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 119,
+                  "mutability": "mutable",
+                  "name": "_stakeHouse",
+                  "nameLocation": "1432:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1424:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 118,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1424:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 121,
+                  "mutability": "mutable",
+                  "name": "_blsPublicKey",
+                  "nameLocation": "1469:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1454:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 120,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1454:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 123,
+                  "mutability": "mutable",
+                  "name": "_newIndexId",
+                  "nameLocation": "1501:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1493:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 122,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1493:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1413:106:2"
+            },
+            "returnParameters": {
+              "id": 125,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1528:0:2"
+            },
+            "scope": 297,
+            "src": "1378:151:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 127,
+              "nodeType": "StructuredDocumentation",
+              "src": "1537:313:2",
+              "text": "@notice Allows an index owner to approve a marketplace to transfer ownership of a KNOT from one index to another\n @param _stakeHouse Registry that the KNOT is part of\n @param _blsPublicKey of the KNOT\n @param _spender Account that can transfer the knot that is isolated within an index"
+            },
+            "functionSelector": "6a267f40",
+            "id": 136,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "approveSpendingOfKnotInIndex",
+            "nameLocation": "1865:28:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 134,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 129,
+                  "mutability": "mutable",
+                  "name": "_stakeHouse",
+                  "nameLocation": "1912:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 136,
+                  "src": "1904:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 128,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1904:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 131,
+                  "mutability": "mutable",
+                  "name": "_blsPublicKey",
+                  "nameLocation": "1949:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 136,
+                  "src": "1934:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 130,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1934:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 133,
+                  "mutability": "mutable",
+                  "name": "_spender",
+                  "nameLocation": "1981:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 136,
+                  "src": "1973:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 132,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1973:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1893:103:2"
+            },
+            "returnParameters": {
+              "id": 135,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2005:0:2"
+            },
+            "scope": 297,
+            "src": "1856:150:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 137,
+              "nodeType": "StructuredDocumentation",
+              "src": "2014:269:2",
+              "text": "@notice Move a KNOT that is part of an index into the open index in order to get access to the savETH <> dETH\n @param _stakeHouse Registry that the KNOT is part of\n @param _blsPublicKey of the KNOT\n @param _recipient Address receiving savETH"
+            },
+            "functionSelector": "cd3e2a80",
+            "id": 146,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addKnotToOpenIndex",
+            "nameLocation": "2298:18:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 144,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 139,
+                  "mutability": "mutable",
+                  "name": "_stakeHouse",
+                  "nameLocation": "2335:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 146,
+                  "src": "2327:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 138,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2327:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 141,
+                  "mutability": "mutable",
+                  "name": "_blsPublicKey",
+                  "nameLocation": "2372:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 146,
+                  "src": "2357:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 140,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2357:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 143,
+                  "mutability": "mutable",
+                  "name": "_recipient",
+                  "nameLocation": "2404:10:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 146,
+                  "src": "2396:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 142,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2396:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2316:105:2"
+            },
+            "returnParameters": {
+              "id": 145,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2430:0:2"
+            },
+            "scope": 297,
+            "src": "2289:142:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 147,
+              "nodeType": "StructuredDocumentation",
+              "src": "2439:390:2",
+              "text": "@notice Given a KNOT that is part of the open index, allow a savETH holder to isolate the KNOT into their own index gaining exclusive rights to the network inflation rewards\n @param _stakeHouse Address of StakeHouse that the KNOT belongs to\n @param _blsPublicKey KNOT ID within the StakeHouse\n @param _targetIndexId ID of the index that the KNOT will be added to"
+            },
+            "functionSelector": "0eaefba6",
+            "id": 156,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isolateKnotFromOpenIndex",
+            "nameLocation": "2844:24:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 154,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 149,
+                  "mutability": "mutable",
+                  "name": "_stakeHouse",
+                  "nameLocation": "2887:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 156,
+                  "src": "2879:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 148,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2879:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 151,
+                  "mutability": "mutable",
+                  "name": "_blsPublicKey",
+                  "nameLocation": "2924:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 156,
+                  "src": "2909:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 150,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2909:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 153,
+                  "mutability": "mutable",
+                  "name": "_targetIndexId",
+                  "nameLocation": "2956:14:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 156,
+                  "src": "2948:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 152,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2948:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2868:109:2"
+            },
+            "returnParameters": {
+              "id": 155,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2986:0:2"
+            },
+            "scope": 297,
+            "src": "2835:152:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 157,
+              "nodeType": "StructuredDocumentation",
+              "src": "2995:279:2",
+              "text": "@notice In a single transaction, add knot to open index and withdraw dETH in registry\n @param _stakeHouse Address of StakeHouse that the KNOT belongs to\n @param _blsPublicKey KNOT ID that belongs to an index\n @param _recipient Recipient of dETH tokens"
+            },
+            "functionSelector": "7a28238a",
+            "id": 166,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addKnotToOpenIndexAndWithdraw",
+            "nameLocation": "3289:29:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 164,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 159,
+                  "mutability": "mutable",
+                  "name": "_stakeHouse",
+                  "nameLocation": "3337:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 166,
+                  "src": "3329:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 158,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3329:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 161,
+                  "mutability": "mutable",
+                  "name": "_blsPublicKey",
+                  "nameLocation": "3374:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 166,
+                  "src": "3359:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 160,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3359:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 163,
+                  "mutability": "mutable",
+                  "name": "_recipient",
+                  "nameLocation": "3406:10:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 166,
+                  "src": "3398:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 162,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3398:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3318:105:2"
+            },
+            "returnParameters": {
+              "id": 165,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3432:0:2"
+            },
+            "scope": 297,
+            "src": "3280:153:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 167,
+              "nodeType": "StructuredDocumentation",
+              "src": "3441:303:2",
+              "text": "@notice In a single transaction, deposit dETH and isolate a knot into an index\n @param _stakeHouse Address of StakeHouse that the KNOT belongs to\n @param _blsPublicKey KNOT ID that requires adding to an index\n @param _indexId ID of the index that the KNOT is being added into"
+            },
+            "functionSelector": "46bb406a",
+            "id": 176,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "depositAndIsolateKnotIntoIndex",
+            "nameLocation": "3759:30:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 174,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 169,
+                  "mutability": "mutable",
+                  "name": "_stakeHouse",
+                  "nameLocation": "3808:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 176,
+                  "src": "3800:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 168,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3800:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 171,
+                  "mutability": "mutable",
+                  "name": "_blsPublicKey",
+                  "nameLocation": "3845:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 176,
+                  "src": "3830:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 170,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3830:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 173,
+                  "mutability": "mutable",
+                  "name": "_indexId",
+                  "nameLocation": "3877:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 176,
+                  "src": "3869:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 172,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3869:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3789:103:2"
+            },
+            "returnParameters": {
+              "id": 175,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3901:0:2"
+            },
+            "scope": 297,
+            "src": "3750:152:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 177,
+              "nodeType": "StructuredDocumentation",
+              "src": "3910:128:2",
+              "text": "@notice Allows a SaveETH holder to exchange some or all of their SaveETH for dETH\n @param _amount of SaveETH to burn"
+            },
+            "functionSelector": "08fab167",
+            "id": 184,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdraw",
+            "nameLocation": "4053:8:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 182,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 179,
+                  "mutability": "mutable",
+                  "name": "_recipient",
+                  "nameLocation": "4070:10:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 184,
+                  "src": "4062:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 178,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4062:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 181,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "4090:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 184,
+                  "src": "4082:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 180,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4082:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4061:37:2"
+            },
+            "returnParameters": {
+              "id": 183,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4107:0:2"
+            },
+            "scope": 297,
+            "src": "4044:64:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 185,
+              "nodeType": "StructuredDocumentation",
+              "src": "4116:96:2",
+              "text": "@notice Deposit dETH in exchange for SaveETH\n @param _amount of dETH being deposited"
+            },
+            "functionSelector": "b3fb6564",
+            "id": 192,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deposit",
+            "nameLocation": "4227:7:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 190,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 187,
+                  "mutability": "mutable",
+                  "name": "_recipient",
+                  "nameLocation": "4243:10:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 192,
+                  "src": "4235:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 186,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4235:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 189,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "4263:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 192,
+                  "src": "4255:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 188,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4255:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4234:37:2"
+            },
+            "returnParameters": {
+              "id": 191,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4280:0:2"
+            },
+            "scope": 297,
+            "src": "4218:63:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 193,
+              "nodeType": "StructuredDocumentation",
+              "src": "4289:79:2",
+              "text": "@notice Total number of dETH rewards minted for knot from inflation rewards"
+            },
+            "functionSelector": "8ed759a0",
+            "id": 200,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "dETHRewardsMintedForKnot",
+            "nameLocation": "4383:24:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 196,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 195,
+                  "mutability": "mutable",
+                  "name": "_blsPublicKey",
+                  "nameLocation": "4423:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 200,
+                  "src": "4408:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 194,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4408:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4407:30:2"
+            },
+            "returnParameters": {
+              "id": 199,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 198,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 200,
+                  "src": "4461:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 197,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4461:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4460:9:2"
+            },
+            "scope": 297,
+            "src": "4374:96:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 201,
+              "nodeType": "StructuredDocumentation",
+              "src": "4478:120:2",
+              "text": "@notice Approved spender that can transfer ownership of a KNOT from one index to another (a marketplace for example)"
+            },
+            "functionSelector": "e82c0b3f",
+            "id": 208,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "approvedKnotSpender",
+            "nameLocation": "4613:19:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 204,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 203,
+                  "mutability": "mutable",
+                  "name": "_blsPublicKey",
+                  "nameLocation": "4648:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 208,
+                  "src": "4633:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 202,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4633:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4632:30:2"
+            },
+            "returnParameters": {
+              "id": 207,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 206,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 208,
+                  "src": "4686:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 205,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4686:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4685:9:2"
+            },
+            "scope": 297,
+            "src": "4604:91:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 209,
+              "nodeType": "StructuredDocumentation",
+              "src": "4703:103:2",
+              "text": "@notice Approved spender that can transfer ownership of an entire index (a marketplace for example)"
+            },
+            "functionSelector": "938145ec",
+            "id": 216,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "approvedIndexSpender",
+            "nameLocation": "4821:20:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 212,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 211,
+                  "mutability": "mutable",
+                  "name": "_indexId",
+                  "nameLocation": "4850:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 216,
+                  "src": "4842:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 210,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4842:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4841:18:2"
+            },
+            "returnParameters": {
+              "id": 215,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 214,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 216,
+                  "src": "4883:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 213,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4883:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4882:9:2"
+            },
+            "scope": 297,
+            "src": "4812:80:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 217,
+              "nodeType": "StructuredDocumentation",
+              "src": "4900:106:2",
+              "text": "@notice Given an index identifier, returns the owner of the index or zero address if index not created"
+            },
+            "functionSelector": "7bd70dab",
+            "id": 224,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "indexIdToOwner",
+            "nameLocation": "5021:14:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 220,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 219,
+                  "mutability": "mutable",
+                  "name": "_indexId",
+                  "nameLocation": "5044:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 224,
+                  "src": "5036:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 218,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5036:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5035:18:2"
+            },
+            "returnParameters": {
+              "id": 223,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 222,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 224,
+                  "src": "5077:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 221,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5077:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5076:9:2"
+            },
+            "scope": 297,
+            "src": "5012:74:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 225,
+              "nodeType": "StructuredDocumentation",
+              "src": "5094:113:2",
+              "text": "@notice Total dETH isolated for a knot associated with an index. Returns zero if knot is not part of an index"
+            },
+            "functionSelector": "b698f816",
+            "id": 234,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "knotDETHBalanceInIndex",
+            "nameLocation": "5222:22:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 230,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 227,
+                  "mutability": "mutable",
+                  "name": "_indexId",
+                  "nameLocation": "5253:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 234,
+                  "src": "5245:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 226,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5245:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 229,
+                  "mutability": "mutable",
+                  "name": "_blsPublicKey",
+                  "nameLocation": "5278:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 234,
+                  "src": "5263:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 228,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5263:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5244:48:2"
+            },
+            "returnParameters": {
+              "id": 233,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 232,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 234,
+                  "src": "5316:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 231,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5316:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5315:9:2"
+            },
+            "scope": 297,
+            "src": "5213:112:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 235,
+              "nodeType": "StructuredDocumentation",
+              "src": "5333:109:2",
+              "text": "@notice ID of KNOT associated index. Zero if part of open index or non zero if part of a user-owned index"
+            },
+            "functionSelector": "e99c0f1f",
+            "id": 242,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "associatedIndexIdForKnot",
+            "nameLocation": "5457:24:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 238,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 237,
+                  "mutability": "mutable",
+                  "name": "_blsPublicKey",
+                  "nameLocation": "5497:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 242,
+                  "src": "5482:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 236,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5482:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5481:30:2"
+            },
+            "returnParameters": {
+              "id": 241,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 240,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 242,
+                  "src": "5535:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 239,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5535:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5534:9:2"
+            },
+            "scope": 297,
+            "src": "5448:96:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 243,
+              "nodeType": "StructuredDocumentation",
+              "src": "5552:139:2",
+              "text": "@notice Returns true if KNOT is part of the open index where they can spend their savETH. Otherwise they are part of a user owned index"
+            },
+            "functionSelector": "e4cda30c",
+            "id": 250,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isKnotPartOfOpenIndex",
+            "nameLocation": "5706:21:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 246,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 245,
+                  "mutability": "mutable",
+                  "name": "_blsPublicKey",
+                  "nameLocation": "5743:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 250,
+                  "src": "5728:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 244,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5728:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5727:30:2"
+            },
+            "returnParameters": {
+              "id": 249,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 248,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 250,
+                  "src": "5781:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 247,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5781:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5780:6:2"
+            },
+            "scope": 297,
+            "src": "5697:90:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 251,
+              "nodeType": "StructuredDocumentation",
+              "src": "5795:101:2",
+              "text": "@notice Total number of dETH deposited into the open index that is not part of user owned indices"
+            },
+            "functionSelector": "88f30201",
+            "id": 256,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "dETHUnderManagementInOpenIndex",
+            "nameLocation": "5911:30:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 252,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "5941:2:2"
+            },
+            "returnParameters": {
+              "id": 255,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 254,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 256,
+                  "src": "5967:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 253,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5967:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5966:9:2"
+            },
+            "scope": 297,
+            "src": "5902:74:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 257,
+              "nodeType": "StructuredDocumentation",
+              "src": "5984:56:2",
+              "text": "@notice Total number of dETH minted across all KNOTs"
+            },
+            "functionSelector": "a9f95e33",
+            "id": 262,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "dETHInCirculation",
+            "nameLocation": "6055:17:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 258,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6072:2:2"
+            },
+            "returnParameters": {
+              "id": 261,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 260,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 262,
+                  "src": "6098:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 259,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6098:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6097:9:2"
+            },
+            "scope": 297,
+            "src": "6046:61:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 263,
+              "nodeType": "StructuredDocumentation",
+              "src": "6115:63:2",
+              "text": "@notice Total amount of dETH isolated in user owned indices"
+            },
+            "functionSelector": "36793a22",
+            "id": 268,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "totalDETHInIndices",
+            "nameLocation": "6193:18:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 264,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6211:2:2"
+            },
+            "returnParameters": {
+              "id": 267,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 266,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 268,
+                  "src": "6237:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 265,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6237:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6236:9:2"
+            },
+            "scope": 297,
+            "src": "6184:62:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 269,
+              "nodeType": "StructuredDocumentation",
+              "src": "6254:79:2",
+              "text": "@notice Helper to convert dETH to savETH based on the current exchange rate"
+            },
+            "functionSelector": "1690b4c7",
+            "id": 276,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "dETHToSavETH",
+            "nameLocation": "6348:12:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 272,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 271,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "6369:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 276,
+                  "src": "6361:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 270,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6361:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6360:17:2"
+            },
+            "returnParameters": {
+              "id": 275,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 274,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 276,
+                  "src": "6401:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 273,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6401:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6400:9:2"
+            },
+            "scope": 297,
+            "src": "6339:71:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 277,
+              "nodeType": "StructuredDocumentation",
+              "src": "6418:79:2",
+              "text": "@notice Helper to convert savETH to dETH based on the current exchange rate"
+            },
+            "functionSelector": "f8c60d11",
+            "id": 284,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "savETHToDETH",
+            "nameLocation": "6512:12:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 280,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 279,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "6533:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 284,
+                  "src": "6525:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 278,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6525:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6524:17:2"
+            },
+            "returnParameters": {
+              "id": 283,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 282,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 284,
+                  "src": "6565:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 281,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6565:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6564:9:2"
+            },
+            "scope": 297,
+            "src": "6503:71:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 285,
+              "nodeType": "StructuredDocumentation",
+              "src": "6582:37:2",
+              "text": "@notice Address of the dETH token"
+            },
+            "functionSelector": "94c784e8",
+            "id": 290,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "dETHToken",
+            "nameLocation": "6634:9:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 286,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6643:2:2"
+            },
+            "returnParameters": {
+              "id": 289,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 288,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 290,
+                  "src": "6669:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 287,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6669:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6668:9:2"
+            },
+            "scope": 297,
+            "src": "6625:53:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 291,
+              "nodeType": "StructuredDocumentation",
+              "src": "6686:39:2",
+              "text": "@notice Address of the savETH token"
+            },
+            "functionSelector": "b5e513a1",
+            "id": 296,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "savETHToken",
+            "nameLocation": "6740:11:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 292,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6751:2:2"
+            },
+            "returnParameters": {
+              "id": 295,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 294,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 296,
+                  "src": "6777:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 293,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6777:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6776:9:2"
+            },
+            "scope": 297,
+            "src": "6731:55:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 298,
+        "src": "67:6722:2",
+        "usedErrors": []
+      }
+    ],
+    "src": "0:6789:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.11",
+  "updatedAt": "2022-12-28T04:21:25.430Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "addKnotToOpenIndex(address,bytes,address)": {
+        "params": {
+          "_blsPublicKey": "of the KNOT",
+          "_recipient": "Address receiving savETH",
+          "_stakeHouse": "Registry that the KNOT is part of"
+        }
+      },
+      "addKnotToOpenIndexAndWithdraw(address,bytes,address)": {
+        "params": {
+          "_blsPublicKey": "KNOT ID that belongs to an index",
+          "_recipient": "Recipient of dETH tokens",
+          "_stakeHouse": "Address of StakeHouse that the KNOT belongs to"
+        }
+      },
+      "approveForIndexOwnershipTransfer(uint256,address)": {
+        "params": {
+          "_indexId": "ID of the index being approved",
+          "_spender": "Authorised spender or zero address to clear approval"
+        }
+      },
+      "approveSpendingOfKnotInIndex(address,bytes,address)": {
+        "params": {
+          "_blsPublicKey": "of the KNOT",
+          "_spender": "Account that can transfer the knot that is isolated within an index",
+          "_stakeHouse": "Registry that the KNOT is part of"
+        }
+      },
+      "createIndex(address)": {
+        "params": {
+          "_owner": "Address that will own the new index. ID of the index is auto generated and assigned to this account"
+        }
+      },
+      "deposit(address,uint128)": {
+        "params": {
+          "_amount": "of dETH being deposited"
+        }
+      },
+      "depositAndIsolateKnotIntoIndex(address,bytes,uint256)": {
+        "params": {
+          "_blsPublicKey": "KNOT ID that requires adding to an index",
+          "_indexId": "ID of the index that the KNOT is being added into",
+          "_stakeHouse": "Address of StakeHouse that the KNOT belongs to"
+        }
+      },
+      "isolateKnotFromOpenIndex(address,bytes,uint256)": {
+        "params": {
+          "_blsPublicKey": "KNOT ID within the StakeHouse",
+          "_stakeHouse": "Address of StakeHouse that the KNOT belongs to",
+          "_targetIndexId": "ID of the index that the KNOT will be added to"
+        }
+      },
+      "transferIndexOwnership(uint256,address)": {
+        "params": {
+          "_indexId": "ID of the index having ownership transferred",
+          "_to": "Account receiving ownership of the index"
+        }
+      },
+      "transferKnotToAnotherIndex(address,bytes,uint256)": {
+        "params": {
+          "_blsPublicKey": "of the KNOT",
+          "_newIndexId": "ID of the index receiving the KNOT",
+          "_stakeHouse": "Registry that the KNOT is part of"
+        }
+      },
+      "withdraw(address,uint128)": {
+        "params": {
+          "_amount": "of SaveETH to burn"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "addKnotToOpenIndex(address,bytes,address)": {
+        "notice": "Move a KNOT that is part of an index into the open index in order to get access to the savETH <> dETH"
+      },
+      "addKnotToOpenIndexAndWithdraw(address,bytes,address)": {
+        "notice": "In a single transaction, add knot to open index and withdraw dETH in registry"
+      },
+      "approveForIndexOwnershipTransfer(uint256,address)": {
+        "notice": "Allow an owner of an index to approve another account to transfer ownership (like a marketplace)"
+      },
+      "approveSpendingOfKnotInIndex(address,bytes,address)": {
+        "notice": "Allows an index owner to approve a marketplace to transfer ownership of a KNOT from one index to another"
+      },
+      "approvedIndexSpender(uint256)": {
+        "notice": "Approved spender that can transfer ownership of an entire index (a marketplace for example)"
+      },
+      "approvedKnotSpender(bytes)": {
+        "notice": "Approved spender that can transfer ownership of a KNOT from one index to another (a marketplace for example)"
+      },
+      "associatedIndexIdForKnot(bytes)": {
+        "notice": "ID of KNOT associated index. Zero if part of open index or non zero if part of a user-owned index"
+      },
+      "createIndex(address)": {
+        "notice": "Allows any account to create a savETH index in order to group KNOTs together that earn exclusive dETH rewards. The index will be owned by _owner"
+      },
+      "dETHInCirculation()": {
+        "notice": "Total number of dETH minted across all KNOTs"
+      },
+      "dETHRewardsMintedForKnot(bytes)": {
+        "notice": "Total number of dETH rewards minted for knot from inflation rewards"
+      },
+      "dETHToSavETH(uint256)": {
+        "notice": "Helper to convert dETH to savETH based on the current exchange rate"
+      },
+      "dETHToken()": {
+        "notice": "Address of the dETH token"
+      },
+      "dETHUnderManagementInOpenIndex()": {
+        "notice": "Total number of dETH deposited into the open index that is not part of user owned indices"
+      },
+      "deposit(address,uint128)": {
+        "notice": "Deposit dETH in exchange for SaveETH"
+      },
+      "depositAndIsolateKnotIntoIndex(address,bytes,uint256)": {
+        "notice": "In a single transaction, deposit dETH and isolate a knot into an index"
+      },
+      "indexIdToOwner(uint256)": {
+        "notice": "Given an index identifier, returns the owner of the index or zero address if index not created"
+      },
+      "isKnotPartOfOpenIndex(bytes)": {
+        "notice": "Returns true if KNOT is part of the open index where they can spend their savETH. Otherwise they are part of a user owned index"
+      },
+      "isolateKnotFromOpenIndex(address,bytes,uint256)": {
+        "notice": "Given a KNOT that is part of the open index, allow a savETH holder to isolate the KNOT into their own index gaining exclusive rights to the network inflation rewards"
+      },
+      "knotDETHBalanceInIndex(uint256,bytes)": {
+        "notice": "Total dETH isolated for a knot associated with an index. Returns zero if knot is not part of an index"
+      },
+      "savETHToDETH(uint256)": {
+        "notice": "Helper to convert savETH to dETH based on the current exchange rate"
+      },
+      "savETHToken()": {
+        "notice": "Address of the savETH token"
+      },
+      "totalDETHInIndices()": {
+        "notice": "Total amount of dETH isolated in user owned indices"
+      },
+      "transferIndexOwnership(uint256,address)": {
+        "notice": "Transfer ownership of an index of KNOTs to a new owner"
+      },
+      "transferKnotToAnotherIndex(address,bytes,uint256)": {
+        "notice": "Allows an index owner or KNOT spender to transfer ownership of a KNOT to another index"
+      },
+      "withdraw(address,uint128)": {
+        "notice": "Allows a SaveETH holder to exchange some or all of their SaveETH for dETH"
+      }
+    },
+    "version": 1
+  }
+}
