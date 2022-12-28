@@ -486,8 +486,7 @@ async def main(
         print(f"\nUser LSD Validator returned to openIndex: {user_lsd_validators_ids[i]}")
         print(f"\nYield of User LSD Validator: {user_lsd_validators_details[i]['reportedYield']}%")
 
-        print(f"\nPercentage increase in yield from {user_lsd_validators_details[i]['reportedYield']}% to {openindex_validators_details[i]['reportedYield']}% is: {round((float(user_lsd_validators_details[i]['reportedYield']) - float(openindex_validators_details[i]['reportedYield'])) / float(openindex_validators_details[i]['reportedYield']) * 100, 2)}%")
-        print(f"\n")
+        print(f"\nPercentage increase in yield from {user_lsd_validators_details[i]['reportedYield']}% to {openindex_validators_details[i]['reportedYield']}% is: {round((float(openindex_validators_details[i]['reportedYield']) - float(user_lsd_validators_details[i]['reportedYield'])) / float(user_lsd_validators_details[i]['reportedYield']) * 100, 2)}%")
 
 
     if consider_execution_cost:
@@ -496,6 +495,7 @@ async def main(
     else:
         print(
             f"\nDeth profit: {deth_gained_for_returning - deth_required_to_isolate}")
+
 
 
 if __name__ == "__main__":
