@@ -7,7 +7,7 @@ To find arbitrage opportunities, the script compares the yields of validators in
 
 To fetch information about the validators and their yields, the script queries the LSD and Stakehouse subgraphs using GraphQL. It also interacts with the `ISavETHManager` and `ArbitrageExecutor` contracts to execute the arbitrage by isolating the validators and returning the user's validators to the open index.
 
-[SavETHManager Smart Contract](SMART_CONTRACT_README.md)
+[ArbitrageExecuter Smart Contract](SMART_CONTRACT_README.md)
 
 To Run
 ------
